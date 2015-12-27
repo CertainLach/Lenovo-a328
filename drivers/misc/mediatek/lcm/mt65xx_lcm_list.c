@@ -19,11 +19,16 @@
 #endif
 
 extern LCM_DRIVER ili9806e_dsi_vdo_qimei_lcm_drv;
+extern LCM_DRIVER ili9806e_dsi_vdo_lcm_drv;
 
 LCM_DRIVER* lcm_driver_list[] = 
 {
 #if defined(ILI9806E_DSI_VDO_QIMEI)
 	&ili9806e_dsi_vdo_qimei_lcm_drv,
+#endif
+
+#if defined(ILI9806E_DSI_VDO)
+	&ili9806e_dsi_vdo_lcm_drv,
 #endif
 };
 
