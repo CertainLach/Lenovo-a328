@@ -388,7 +388,11 @@ hwPowerOn(MT6323_POWER_LDO_VGP2, VOL_2800, "Lance_LCM");
 static void lcm_suspend(void)
 {
 	push_table(lcm_deep_sleep_mode_in_setting, sizeof(lcm_deep_sleep_mode_in_setting) / sizeof(struct LCM_setting_table), 1);
-
+	SET_RESET_PIN(1);
+	SET_RESET_PIN(0);
+	MDELAY(10);
+	SET_RESET_PIN(1);
+	MDELAY(20);
 
 }
 
